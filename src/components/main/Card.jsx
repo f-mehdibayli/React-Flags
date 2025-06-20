@@ -1,8 +1,4 @@
-import { useState } from "react";
-
-function Card({flags,name,capital,region}) {
-    console.log(name);
-    
+function Card({flags,name,capital,region}) {    
     return (
         <article className="flex flex-col dark:bg-gray-50">
             <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum">
