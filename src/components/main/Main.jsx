@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
 import Card from "./Card"
-import Randomcard from "./RandomCard"
 import { Pagination } from "antd"
 import { scrollTopByElem } from "../../utility/scrollTop"
+import Randomcard from "./Randomcard"
 
 function Main() {
     const [data, setData] = useState([])
