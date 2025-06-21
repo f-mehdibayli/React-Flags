@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import Card from "./Card"
-import Randomcard from "./Randomcard"
+import Randomcard from "./RandomCard"
 import { Pagination } from "antd"
 import { scrollTopByElem } from "../../utility/scrollTop"
 
@@ -23,12 +23,17 @@ function Main() {
     }, [])
 
 
-    if (data.length == 0) return <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-600"></div>
-
     return (
         <main className=" dark:bg-gray-100 dark:text-gray-800">
             <section className="py-6 sm:py-12">
+
                 <div className="container p-6 mx-auto space-y-8">
+                    {
+                        data.length == 0 &&
+                        <div className="flex justify-center">
+                            <span className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-600"></span>
+                        </div>
+                    }
                     {
                         data.length > 0 && <Randomcard {...data[randomInd]} />
                     }
@@ -46,7 +51,7 @@ function Main() {
             <Pagination
                 align="center"
                 pageSize={12}
-                onChange={(page,pageSize) => {
+                onChange={(page, pageSize) => {
                     setCount(page * pageSize)
                     scrollTopByElem('content')
                 }}

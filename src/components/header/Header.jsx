@@ -24,7 +24,7 @@ function Header() {
                     {
                         data.map(item => (
                             <li className="flex">
-                                <Link to={`/region/${item.toLocaleLowerCase( )}`} className="flex items-center px-4 -mb-1 border-b-2 dark:border- ">{item}</Link>
+                                <Link to={`/region/${item.toLocaleLowerCase()}`} className="flex items-center px-4 -mb-1 border-b-2 dark:border- ">{item}</Link>
                             </li>
                         ))
                     }
